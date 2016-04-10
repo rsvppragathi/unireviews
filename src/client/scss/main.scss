@@ -1,0 +1,209 @@
+//css
+
+@import 'bourbon';
+@import 'reset';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+@mixin breakpoint($point) {
+  @media (max-width: $point) { @content; }
+}
+
+$rust: #B11B1B;
+
+
+body {  
+	margin: 0;
+	padding: 0;
+	// font-family: 'Open Sans', sans-serif;
+	// font-family: 'Playfair Display', serif;
+	font-family: 'Open Sans', sans-serif;
+
+
+	color: #444;
+	font-size: 1em;
+	background: #eee;
+	&.modal-open {
+		overflow: hidden;
+	}
+}
+
+.bg {
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: url(http://i.imgur.com/n5wCPMz.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+header {
+	height: 60px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background: white;
+	// border-top: 5px $green solid;
+	text-align: center;
+	z-index: 500;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+
+	.header-inner {
+		max-width: 920px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.logo {
+		letter-spacing: 0.1em;
+		font-weight: 300;
+		font-size: 1.4em;
+		line-height: 60px;
+		float: left;
+		margin-right: 20px;
+		color: $rust;
+	}
+
+	.sub {
+		line-height: 60px;
+		font-size: 1em;
+		color: #999;
+		float: left;
+
+		b {
+			color: $rust;
+		}
+
+	}
+}
+
+h1 {
+	font-size: 2.2em;
+}
+
+h2 {
+	font-size: 1.4em;
+	color: #888;
+}
+
+h1, h2, h3, h4, h5 {
+	margin-bottom: 10px;
+}
+
+section {
+	padding: 40px 20px;
+	&.section-header{
+		margin: 20px 10px;
+	    padding-bottom: 20px;
+		border-bottom: 1px solid #dfdfdf;
+		h1{
+			float: right;
+		}
+	}
+
+	@include breakpoint(960px) {
+
+	}
+}
+
+.card {
+	clear: both;
+	&.white {
+		background: white;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	}
+}
+
+
+.clearfix {
+	clear: both;
+}
+
+.wrap {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 90px;
+	max-width: 920px;
+	z-index: 200;
+    position: relative;
+}
+
+.questions-outer {
+	min-height: 200px;
+	margin: 0 auto;
+	max-width: 640px;
+	background: rgba(0,0,0,0.6);
+
+	h1 {
+		color: white;
+		font-size: 1.6em;
+		text-align: center;
+		padding: 20px;
+		line-height: 1.6em;
+	}
+
+	.tools {
+		background: $rust;
+		min-height: 60px; 
+		display: block;
+		line-height: 60px;
+		color: white;
+		padding-left: 20px;
+	}
+
+
+	.questions {
+		background: white;
+
+		.question {
+			padding: 20px;
+			border-bottom: 1px solid #ccc;
+
+			.label {
+				font-weight: 300;
+				color: #999;
+				letter-spacing: 0.1em;
+				font-size: 0.9em;
+			}
+
+			.tags {
+			    margin-top: 10px;
+			    display: block;
+			    width: 100%;
+			    float: left;
+				.tag {
+					background: #666;
+					color: white;
+					padding: 5px;
+					float: left;
+					font-size: 0.8em;
+					margin: 5px;
+					border-radius: 6px;
+				}
+			}
+
+			.data {
+				padding-top: 10px;
+				font-size: 1.6em;
+			}
+
+			.answers {
+				display: block;
+			    background: #eee;
+			    padding: 15px;
+			    margin-top: 20px;
+
+			    .answer {
+			    	margin-bottom: 20px;
+			    	p {
+			    		font-size: 1.2em;
+			    	}
+			    }
+			}
+		}
+	}
+}
+
+.app-inner {
+
+}
